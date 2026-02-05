@@ -22,7 +22,6 @@ Route::controller(PetitionController::class)->middleware('auth')->group(function
     Route::put('peticion/update/{id}', 'update')->name('petitions.update');
     Route::post('peticiones/firmar/{id}', 'firmar')->name('petitions.firmar');
     Route::get('peticionesfirmadas', 'peticionesFirmadas')->name('petitions.peticionesfirmadas');
-    // CORREGIDO: Aquí tenías una ruta larguísima
     Route::delete('/petitions/{id}', [PetitionController::class, 'destroy'])->name('petitions.destroy');
 });
 
