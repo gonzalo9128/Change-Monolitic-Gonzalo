@@ -39,11 +39,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Estas rutas parecen duplicadas con las de arriba, pero las dejo por si acaso las usas en otro lado
-// Si te dan error de "nombre duplicado", bórralas.
-// Route::get('/petitions/{id}/edit', [PetitionController::class, 'edit'])->name('petitions.edit')->middleware('auth');
-// Route::put('/petitions/{id}', [PetitionController::class, 'update'])->name('petitions.update')->middleware('auth');
-
 require __DIR__.'/auth.php';
 
 // GRUPO DE RUTAS DE ADMINISTRADOR
