@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use change_Monolitic_Gonzalo_final\tests\TestCase;
 
 class ExampleTest extends TestCase
 {

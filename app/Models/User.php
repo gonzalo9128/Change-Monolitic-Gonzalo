@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id', // <--- Añadido role_id por si acaso lo necesitas rellenar
     ];
 
     /**
@@ -44,5 +46,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    public function petitions()
+    {
+        return $this->hasMany(Petition::class);
+    }
+
+    // RELACIÓN 2: Peticiones que el usuario HA FIRMADO (Firmante)
+    public function firmantes()
+    {
+        return $this->belongsToMany(Petition::class, 'petition_user');
     }
 }

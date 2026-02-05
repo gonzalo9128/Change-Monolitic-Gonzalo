@@ -1,5 +1,5 @@
 <?php
 
 return [
-    App\Providers\AppServiceProvider::class,
+    \change_Monolitic_Gonzalo_final\app\Providers\AppServiceProvider::class,
 ];

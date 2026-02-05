@@ -1,0 +1,220 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* =======================================
+HERO */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="1.5" fill="%23e0e0e0"/></svg>');
+    background-repeat: repeat;
+    background-size: 15px 15px;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-content h1 {
+    color: #333;
+}
+
+.hero-content p {
+    color: #666;
+}
+
+.petition-bubble {
+    text-align: center;
+    width: 200px;
+    z-index: 5;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.petition-bubble img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.petition-bubble:hover {
+    transform: translateY(-5px);
+}
+
+.petition-bubble:hover img {
+    border-color: #007bff;
+}
+
+#p1 {
+    top: 10%;
+    left: 10%;
+}
+
+#p2 {
+    bottom: 15%;
+    left: 12%;
+}
+
+#p3 {
+    top: 78%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#p4 {
+    top: 10%;
+    right: 10%;
+}
+
+#p5 {
+    bottom: 15%;
+    right: 12%;
+}
+
+/* =======================================
+   PETICIONES LANDING */
+.petition-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.petition-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.petition-card .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    min-height: 84px;
+}
+
+.petition-card .progress {
+    border-radius: 50px;
+    background-color: #f0f0f0;
+}
+
+.petition-card .progress-bar {
+    background-color: #e60023;
+}
+
+/* =======================================
+FOOTER */
+.footer-link {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #e60023;
+    text-decoration: underline;
+}
+
+.footer-link-inline {
+    color: #555;
+    text-decoration: underline;
+}
+
+.footer-link-inline:hover {
+    color: #e60023;
+}
+
+.footer .btn-outline-secondary {
+    border-color: #ccc;
+    color: #555;
+}
+
+/* =======================================
+    CREAR PETICIÓN*/
+.create-petition-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.create-petition-card .form-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #e60023;
+    box-shadow: 0 0 0 0.25rem rgba(230, 0, 35, 0.25);
+}
+
+/* =======================================
+   MEDIAQUERIS*/
+
+@media (max-width: 992px) {
+    .petition-bubble {
+        width: 150px;
+    }
+
+    .petition-bubble img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #p1 { top: 8%; left: 5%; }
+    #p2 { bottom: 10%; left: 5%; }
+    #p3 { bottom: 2%; left: 50%; transform: translateX(-50%); }
+    #p4 { top: 8%; right: 5%; }
+    #p5 { bottom: 10%; right: 5%; }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .hero-content {
+        order: 1;
+        margin-bottom: 30px;
+        max-width: 90%;
+    }
+
+    .petition-bubble {
+        position: static;
+        margin-bottom: 20px;
+        order: 2;
+        width: 100%;
+        transform: none !important;
+    }
+
+    #p2, #p4, #p5 {
+        display: none;
+    }
+
+    #p1, #p3 {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+        margin-bottom: 20px;
+        width: 180px;
+    }
+}
